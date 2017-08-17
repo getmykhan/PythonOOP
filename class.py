@@ -5,6 +5,9 @@ class Emp:
         self.lname = lname
         self.age = age
 
+    def fullname(self):
+        return("{} {}".format(self.fname, self.lname))
+
 
 employee_one = Emp('Mike', 'Tyson', 44)
 
@@ -15,3 +18,5 @@ employee_two = Emp('Lalo', 'Lola', 27)
 print(employee_two.fname + employee_two.lname)
 
 print('Both their ages put together is: ', employee_one.age + employee_two.age)
+
+print(employee_two.fullname())
