@@ -2,11 +2,15 @@
 
 class Emp:
 
+    age_tracker = 0
     age_increase = 1
     def __init__(self, fname, lname, age):
         self.fname = fname
         self.lname = lname
         self.age = age
+
+        if self.age > 30:
+            Emp.age_tracker += 1
 
     def fullname(self):
         return("{} {}".format(self.fname, self.lname))
@@ -16,20 +20,25 @@ class Emp:
 
 employee_one = Emp('Mike', 'Tyson', 44)
 
-print(employee_one.age)
 Emp.increment(employee_one)
-print(employee_one.age)
+
 
 employee_two = Emp('Lalo', 'Lola', 27)
 
-print('*' * 100)
-print('*' * 100)
-print('*' * 100)
 
-print(employee_two.age_increase + employee_two.age_increase)
 print(employee_two.__dict__)
-
 
 employee_two.increment()
 
-print(employee_two.age)
+employee_one.age_increase = 2
+print(employee_one.age_increase)
+Emp.age_increase = 3
+print(employee_one.age_increase)
+
+
+print('*' * 100)
+print('*' * 100)
+print('*' * 100)
+
+
+print(Emp.age_tracker)
